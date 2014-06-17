@@ -28,6 +28,8 @@ export CXX=clang++
 %scons
 
 %install
+export CC=clang
+export CXX=clang++
 scons install DESTDIR=%{buildroot}/sbin
 mkdir -p %{buildroot}/%{_mandir}/man8/
 
