@@ -22,4 +22,4 @@ system.
 %makeinstall_std
 
 %files
-%{_sbindir}/
+%{_sbindir}/*
