@@ -22,5 +22,4 @@ system.
 %makeinstall_std
 
 %files
-/sbin/*
-%{_mandir}/man8/*
+%{_sbindir}/
