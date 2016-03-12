@@ -1,17 +1,11 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
-Version:	1.0.1
-Release:	6
+Version:	1.2.3
+Release:	1
 License:	GPLv2+
 Group:		System/Kernel and hardware
-Source0:	http://exfat.googlecode.com/files/exfat-utils-%{version}.tar.gz
-
-# A cumulative patch with changes since the release of 1.0.1 (SVN rev 342)
-# till the newest revision at the moment (rev 392, 2014-01-18).
-# The license also changed from GPLv3+ to GPLv2+.
-Patch0: exfat-utils-r342-to-r392.patch
-
-URL:		http://code.google.com/p/exfat/
+URL:		https://github.com/relan/exfat
+Source0:	https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	scons
 
 %description
@@ -20,16 +14,17 @@ system.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-export CC=clang
-export CXX=clang++
+export CC=%{__cc}
+export CXX=%{__cxx}
+
 %scons
 
 %install
-export CC=clang
-export CXX=clang++
+export CC=%{__cc}
+export CXX=%{__cxx}
+
 scons install DESTDIR=%{buildroot}/sbin
 mkdir -p %{buildroot}/%{_mandir}/man8/
 
