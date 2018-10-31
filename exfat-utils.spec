@@ -1,7 +1,7 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
 Version:	1.3.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Kernel and hardware
 URL:		https://github.com/relan/exfat
