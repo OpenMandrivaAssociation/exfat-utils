@@ -1,11 +1,13 @@
 Name:		exfat-utils
 Summary:	Utilities for exFAT file system
 Version:	1.3.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		System/Kernel and hardware
 URL:		https://github.com/relan/exfat
 Source0:	https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
+# (tpg) from upstream
+Patch0:		0001-Validate-UTF-8-byte-sequence.patch
 Requires:	fuse-exfat
 
 %description
@@ -13,14 +15,14 @@ A set of utilities for creating, checking, dumping and labeling exFAT file
 system.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 # (tpg) install man
 mkdir -p %{buildroot}%{_mandir}/man8
