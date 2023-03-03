@@ -6,8 +6,6 @@ License:	GPLv2+
 Group:		System/Kernel and hardware
 URL:		https://github.com/relan/exfat
 Source0:	https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{version}.tar.gz
-# (tpg) from upstream
-Patch0:		0001-Validate-UTF-8-byte-sequence.patch
 # (tpg) exfat driver is enabled inside kernel
 Requires:	kernel >= 5.4
 
