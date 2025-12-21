@@ -9,6 +9,11 @@ Source0:	https://github.com/relan/exfat/releases/download/v%{version}/%{name}-%{
 # (tpg) exfat driver is enabled inside kernel
 Requires:	kernel >= 5.4
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 A set of utilities for creating, checking, dumping and labeling exFAT file
 system.
